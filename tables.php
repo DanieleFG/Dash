@@ -405,6 +405,10 @@ uasort($admin->listCritica, 'cmp');
                                 <input type="radio" class="form-check-input" name="radio-responsavel" value="Alessandro dos Reis" />
                                 <label class="form-check-label">Alessandro</label>
                             </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="radio-responsavel" value="Daniele Galvao" />
+                                <label class="form-check-label">Daniele</label>
+                            </div>
                             <button type="submit" class="btn btn-link">Filtrar</button>
                         </form>
                     </div>

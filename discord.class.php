@@ -21,8 +21,8 @@ class DiscordBot
 
   public function setMessage($message)
   {
-    // $this->message['content'] = $message;
-    $this->message['embeds'][0]['title'] = utf8_encode($message);
+    $this->message['embeds'][0]['description'] = $message;
+    // $this->message['embeds'][0]['title'] = utf8_encode($message);
   }
 
   public function getMessageType()
@@ -46,7 +46,7 @@ class DiscordBot
       "avatar_url" => "",
       "embeds" => [
         [
-          "title" => "",
+          "title" => " Lista de demandas de Hoje,  por favor seguir na ordem",
           "type" => "rich",
           "description" => "",
           "timestamp" => $this->messageTimestamp,
@@ -69,6 +69,8 @@ class DiscordBot
 
   public function exec()
   {
+    echo '<pre>'; print_r($this->message);echo '</pre>';
+    // exit(__FILE__.' LINHA ==>'.__LINE__);
     $ch = curl_init( $this->webhook );
     curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
     curl_setopt( $ch, CURLOPT_POST, 1);

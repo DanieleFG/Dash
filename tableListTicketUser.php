@@ -10,6 +10,7 @@
                                                     <th>Titulo</th>
                                                     <th>Responsavel</th>
                                                     <th>Link</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>                                   
                                             <tbody>
@@ -21,18 +22,24 @@
     
                                                     <tr>
                                                         <td> 
-                                                            <input type="checkbox" value="<?php echo $nivel1['id'];?>" name="id-ticket-<?php echo $nivel1['id'];?>">                                                            
+                                                            <input type="checkbox" value="<?php echo $nivel1['titulo'];?>" name="<?php echo $nivel1['id'];?>">                                                            
                                                         </td>
                                                         <td>
                                                             <?php echo $nivel1['prioridade'] ?>  
-                                                            <input type="text" value="<?php echo $nivel1['id'];?>" name="id-ticket-<?php echo $nivel1['id'];?>">
-                                                         </td>
+                                                        </td>
                                                         <td>
                                                             <?php echo $nivel1['tipo_ticket'] ?>
                                                         </td>
-                                                        <td><?php echo $nivel1['titulo'] ?></td>
+                                                        <td>
+                                                            <?php echo $nivel1['titulo'] ?>
+
+                                                        </td>
                                                         <td><?php echo $nivel1['responsavel'] ?></td>
                                                         <td><a href="<?php echo $admin->linkTicket.$nivel1['id'] ?>" target="_blank">Link</a></td>
+                                                        <td>
+                                                            <input type="hidden" id="urlTicket-<?php echo $nivel1['id'];?>" name="urlTicket" value="<?php echo $admin->linkTicket.$nivel1['id'] ?>">
+                                                            <i class="fa fa-clone" style="cursor: pointer" data-toggle="tooltip" title="Copiar Link" onclick="copyInfo('urlTicket-<?php echo $nivel1['id'];?>')" aria-hidden="true"></i>
+                                                        </td>
                                                     
                                                     </tr>
                                                 <?php } ?>
@@ -42,3 +49,4 @@
                                     </div>
                                 </div>
                             </div>
+

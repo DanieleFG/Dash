@@ -53,6 +53,8 @@ class Admin {
     {    
         $lisTicketResponsavel = [];
         $link = "http://tickets.fabricadeideias.com/api/list-tickets-paginated/155025/1?page=1&rows=100&order_dir=asc&v_filter=false&v_filter_param=null&p_filter=false&p_filter_param=null&t_filter=false&t_filter_param=null&s_filter=true&s_filter_param=1&search_param=".urlencode($responsavel)."&search_type=responsavel";
+        // $link = "http://tickets.fabricadeideias.com/api/list-tickets-paginated/155025/1?page=1&rows=100&order_dir=asc&v_filter=false&v_filter_param=null&p_filter=false&p_filter_param=null&t_filter=false&t_filter_param=null&s_filter=false&s_filter_param=null&search_param=&search_type=t%C3%ADtulo";
+
         $lisTicketResponsavel = $this->sendRequest($link);
         if($lisTicketResponsavel){
             return $lisTicketResponsavel['tickets']['rows'];
