@@ -64,3 +64,8 @@ Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework
 
 Copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE) license.
 # Dash
+
+
+Docker
+ docker run -it --rm --name my-running-app dash
+ docker-compose up

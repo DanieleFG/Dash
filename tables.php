@@ -5,12 +5,12 @@ $result = $admin->fetchAPI();
 
 
 $admin->listPrioridade();
-if($_GET['filter_responsavel'] ==true){
+if(isset($_GET['filter_responsavel']) && $_GET['filter_responsavel'] ==true){
     $listResponsavel = $admin->listPrioridadeResponsavel($_GET['radio-responsavel']);
    
 }
 
-uasort($admin->listCritica, 'cmp');
+// uasort($admin->listCritica, 'cmp');
 // echo '<pre>'; print_r($admin->listCritica);echo '</pre>';
 // exit(__FILE__.' LINHA ==>'.__LINE__);
 
@@ -408,6 +408,10 @@ uasort($admin->listCritica, 'cmp');
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" name="radio-responsavel" value="Daniele Galvao" />
                                 <label class="form-check-label">Daniele</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="radio-responsavel" value="Gabriel" />
+                                <label class="form-check-label">Gabriel</label>
                             </div>
                             <button type="submit" class="btn btn-link">Filtrar</button>
                         </form>
